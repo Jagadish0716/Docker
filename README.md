@@ -55,8 +55,6 @@ https://docs.docker.com/get-docker/
 For Demo, 
 You can create an Ubuntu EC2 Instance on AWS and run the below commands to install docker.
 
-reference: https://www.geeksforgeeks.org/how-to-install-and-configure-docker-in-ubuntu/
-
 ### Steps for Installing Docker on Ubuntu
 #### Step 1: Update Software Repositories using the following command
 ```
@@ -91,5 +89,11 @@ Refresh the group permission to use updated one with running following command:
 newgrp docker
 ```
 ![image](https://github.com/user-attachments/assets/738a4a97-6086-41a1-9547-c7ac234a0c02)
+
+#### Step 2: Restart the docker daemon which is already running. After restarting only the changes will comes into effect.
+```
+sudo service docker restart
+```
+#### Step 2: Step 3: Leave the current SSH terminal and re-login with SSH. then carry out.
 
 
