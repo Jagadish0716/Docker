@@ -58,6 +58,6 @@ reference: https://www.geeksforgeeks.org/how-to-install-and-configure-docker-in-
 
 ### Steps for Installing Docker on Ubuntu
 #### Step 1: Update Software Repositories using the following command
-'''
+```
 sudo apt update
-'''
+```
