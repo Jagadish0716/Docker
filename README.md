@@ -54,6 +54,7 @@ https://docs.docker.com/get-docker/
 
 For Demo, 
 You can create an Ubuntu EC2 Instance on AWS and run the below commands to install docker.
+
 reference: https://www.geeksforgeeks.org/how-to-install-and-configure-docker-in-ubuntu/
 
 ### Steps for Installing Docker on Ubuntu
@@ -61,3 +62,34 @@ reference: https://www.geeksforgeeks.org/how-to-install-and-configure-docker-in-
 ```
 sudo apt update
 ```
+#### Step 2: Install Docker using the following command
+```
+sudo apt install docker.io -y
+```
+#### Step 3: Enable and start the docker service by using the following commands.
+```
+sudo systemctl enable docker --now
+```
+#### Step 4: Check Docker Version.
+```
+docker --version
+```
+
+## Executing the Docker Command Without Sudo
+We will get a permission denied error as a regular user (ubuntu) doesn’t have permission to execute docker commands. Now we need to add the the user to the required group.
+
+#### Step 1: So we need to add an Ubuntu user to the docker group. 
+```
+sudo usermod -aG docker ubuntu
+```
+The following command helps in knowing whether current add user assigned to docker group or not:
+```
+getent group docker
+```
+Refresh the group permission to use updated one with running following command:
+```
+newgrp docker
+```
+![image](https://github.com/user-attachments/assets/738a4a97-6086-41a1-9547-c7ac234a0c02)
+
+
