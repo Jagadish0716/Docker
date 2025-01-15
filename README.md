@@ -1,5 +1,5 @@
 # Docker
-this repo will be used to learn and work on docker.
+this repo will be used to learn and work with docker.
 
 ### What is Docker ?
 
