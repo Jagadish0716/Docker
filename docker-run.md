@@ -67,12 +67,14 @@ docker run --name CONTAINER_NAME IMAGE
 
 #### 1. Resource Constraints
 Limit CPU Usage
+
 Limits the container to use at most 2 CPUs.
 ```
 docker run --cpus="2" IMAGE
 ```
 
 Limit Memory Usage
+
 Limits the container to use a maximum of 512 MB of memory.
 ```
 docker run --memory="512m" IMAGE
