@@ -152,6 +152,41 @@ Restarts the container automatically on failure or reboot.
 
 Names the container my_container.
 
+### Managing Containers
+#### 1. Docker Attach
+Attach your terminal to a running container's standard input, output, and error streams.
+```
+docker attach CONTAINER_NAME|CONTAINER_ID
+```
+This is useful for observing or interacting with a running container.
+To detach without stopping the container, press Ctrl-P + Ctrl-Q.
+
+#### 2. Docker Detach
+Detach from a running container without stopping it:
+Use Ctrl-P + Ctrl-Q during an attach session or while running a container interactively with docker run.
+
+#### 3. Docker Stop
+Gracefully stop a running container by sending the SIGTERM (short for Signal Terminate) signal, followed by SIGKILL after a timeout (default: 10 seconds).
+```
+docker stop CONTAINER_NAME|CONTAINER_ID
+```
+
+Use the --time option to specify the timeout:
+```
+docker stop --time=SECONDS CONTAINER_NAME|CONTAINER_ID
+```
+
+#### 4. Docker Start
+Start a stopped container. This command is useful for resuming containers without re-creating them.
+```
+docker start CONTAINER_NAME|CONTAINER_ID
+```
+
+To start a container interactively, use:
+```
+docker start -i CONTAINER_NAME|CONTAINER_ID
+```
+
 ### Common Troubleshooting Tips
 
 Image Not Found: Ensure the image name is correct or pull it manually using docker pull IMAGE.
