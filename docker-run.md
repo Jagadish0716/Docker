@@ -91,42 +91,39 @@ Disable Networking
 docker run --network none IMAGE
 ```
 
-### 3. Health Checks
+#### 3. Health Checks
 Specify a health check command and interval.
 ```
 docker run --health-cmd="CMD" --health-interval=30s IMAGE
 ```
 
-4. Security Options
-
+#### 4. Security Options
 Run as a Specific User
-
+```
 docker run --user UID:GID IMAGE
+```
 
-Limit Capabilities
-
-docker run --cap-drop=ALL --cap-add=NET_ADMIN IMAGE
-
-5. Custom DNS Servers
+#### 5. Custom DNS Servers
 
 Set custom DNS servers for the container.
-
+```
 docker run --dns=8.8.8.8 IMAGE
+```
 
-6. Read-Only Filesystem
-
+#### 6. Read-Only Filesystem
 Make the container's filesystem read-only.
-
+```
 docker run --read-only IMAGE
+```
 
-7. Logging Options
-
+#### 7. Logging Options
 Configure logging drivers and options.
-
+```
 docker run --log-driver=json-file --log-opt max-size=10m IMAGE
+```
 
-Example: Complex docker run Command
-
+#### Example: Complex docker run Command
+```
 docker run \
   -d \
   -p 8080:80 \
@@ -137,6 +134,7 @@ docker run \
   --restart=always \
   --name=my_container \
   my_image
+```
 
 This command:
 
@@ -154,7 +152,7 @@ Restarts the container automatically on failure or reboot.
 
 Names the container my_container.
 
-Common Troubleshooting Tips
+### Common Troubleshooting Tips
 
 Image Not Found: Ensure the image name is correct or pull it manually using docker pull IMAGE.
 
