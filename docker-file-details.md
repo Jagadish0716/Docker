@@ -181,3 +181,62 @@ Use the following strategies to debug Dockerfile builds:
   ```
 - **Interactive Shell**: Use `docker run -it` to debug running containers interactively.
 
+## Docker Build Command
+The `docker build` command is used to create a Docker image from a Dockerfile. Here’s an overview of its syntax and options:
+
+### Basic Syntax
+```bash
+docker build [OPTIONS] PATH | URL | -
+```
+
+### Commonly Used Options
+1. `-t, --tag`
+   Tags the resulting image with a name and optionally a version.
+   ```bash
+   docker build -t myapp:1.0 .
+   ```
+
+2. `--build-arg`
+   Sets build-time variables specified in the Dockerfile.
+   ```bash
+   docker build --build-arg VERSION=1.2 .
+   ```
+
+3. `--file, -f`
+   Specifies the path to the Dockerfile (if not in the current directory).
+   ```bash
+   docker build -f Dockerfile.dev .
+   ```
+
+4. `--no-cache`
+   Ignores cached layers and forces a rebuild.
+   ```bash
+   docker build --no-cache -t myapp .
+   ```
+
+5. `--progress`
+   Sets the type of progress output (`plain` or `auto`).
+   ```bash
+   docker build --progress=plain .
+   ```
+
+6. `--target`
+   Builds a specific stage in a multi-stage Dockerfile.
+   ```bash
+   docker build --target builder .
+   ```
+
+### Examples
+- **Basic Build Command**:
+  ```bash
+  docker build -t myapp .
+  ```
+- **Build with Arguments**:
+  ```bash
+  docker build --build-arg ENV=production -t myapp .
+  ```
+- **Build from a Different Dockerfile**:
+  ```bash
+  docker build -f Dockerfile.dev -t myapp:dev .
+  ```
+
